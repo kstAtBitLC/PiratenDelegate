@@ -14,8 +14,8 @@ namespace PiratenDelegate {
             Console.WriteLine ("Hallo ich bin der Pirat {0}", Name);
         }
 
-        public void MachWasPirat ( MeinDelegateDatenTyp mdg ) {
-            mdg ("_0815");
+        public void MachWasPirat ( MeinDelegateDatenTyp mdg, string s ) {
+            mdg (s);
         }
 
         public void ÄndereName (string s) {

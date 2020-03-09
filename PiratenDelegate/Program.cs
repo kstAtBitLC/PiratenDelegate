@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 namespace PiratenDelegate {
 
     delegate void MeinDelegateDatenTyp (string s1);
+    delegate void MeinDelegateDatenTyp_2 (string s1, string s2, int n);
+
 
     class Program {
         static void Main ( string [] args ) {
             MeinDelegateDatenTyp mddt;
+            MeinDelegateDatenTyp_2 martinDelegateVariable;
 
             Pirat p1 = new Pirat () {Name="Chris" };
             Pirat p2 = new Pirat () { Name = "Marko" };
@@ -26,11 +29,15 @@ namespace PiratenDelegate {
             mddt = new MeinDelegateDatenTyp (p1.ÄndereName);
             mddt += new MeinDelegateDatenTyp (p2.ÄndereZweitName);
 
-            p1.MachWasPirat (mddt);
-            p2.MachWasPirat (mddt);
+            martinDelegateVariable = new MeinDelegateDatenTyp_2 ( g1.MeinDelegateDatenTyp_2_Methode_1);
+            martinDelegateVariable += new MeinDelegateDatenTyp_2 ( g1.MeinDelegateDatenTyp_2_Methode_2);
 
-            Console.WriteLine (p1.Name + " " + p2.Name  + " " + p1.ZweitName  + " " +p2.ZweitName );
+            g1.MartinDelegateAufruf ( martinDelegateVariable, "Martin", "von der Burg", 10 );
+  
+            //p1.MachWasPirat (mddt, "_Aufruf 1");
+            //p2.MachWasPirat (mddt, "_Aufruf_2");
 
+            //Console.WriteLine (p1.Name + " " + p2.Name  + " " + p1.ZweitName  + " " +p2.ZweitName );
 
             Console.Read ();
         }
